@@ -1,0 +1,115 @@
+<html>
+
+<head>
+	<title>RPG</title>
+	<meta charset="UTF-8" />
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<h1>RPG Sim 2</h1>
+		</div>
+		<div class="row">
+			<button id="start">Start</button>
+		</div>
+		<div class="row">
+			<div class="eight columns">
+
+
+				<div class="row">
+					<div id="encounter">
+
+					</div>
+				</div>
+				<div class="row">
+					<div id="decisions">
+						<ul id="decisionList">
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div id="enemies">
+
+					</div>
+				</div>
+				<div class="row">
+					<div id="results" class="big"></div>
+				</div>
+			</div>
+			<div class="four columns">
+				<div class="row">
+					<label>Log</label>
+					<div id="log"></div>
+				</div>
+			</div>  
+		</div>
+
+
+		<!--<div class="row">
+			<input type="text" id="dice" value="2d6"><button id="roll">Roll</button>
+		</div>-->
+		<!--<div class="row"><div id="label" class="med"></div></div>-->
+		<!--<div class="row">
+			<div class="six columns">
+				<label>Raw Roll</label><br>
+				<div id="rawRoll"></div>
+			</div>
+			<div class="six columns">
+				<label>Result</label><br>
+				<div id="rawResult"></div>
+			</div> 
+		</div>-->
+
+
+	</div>
+	<script id="enemy-template" type="text/x-handlebars-template">
+		<div class="enemyCard">
+			<h3 class="enemyName">{{name}}</h3>
+			<h4 class="enemyTitle">Level {{level}} {{race}}</h4>
+			<div class="enemyHp">
+				<label>HP</label><br>
+				<span class="enemyHpValue">{{hp}}</span>
+			</div>
+		</div>
+	</script>
+
+
+	<script id="enemyCard-template" type="text/x-handlebars-template">
+		<div class="enemyCard">
+			<div class="enemyCard__image">
+				<img src="{{image}}" alt="{{name}}" />
+			</div>
+			<div class="enemyCard__race">{{race}}</div>
+			<div class="enemyCard__level">Level {{level}}</div>
+			
+			<!--<div class="enemyCard__description">
+				{{{description}}}
+			</div>-->
+ 
+			<div class="enemyCard__unit-stats clearfix">
+				<div class="one-third">
+					<div class="stat">{{hp}}</div>
+					<div class="stat-value">HP</div>
+				</div>
+
+				<div class="one-third">
+					<div class="stat">{{strength}}</div>
+					<div class="stat-value">STR</div>
+				</div>
+
+				<div class="one-third no-border">
+					<div class="stat">{{dexterity}}</div>
+					<div class="stat-value">DEX</div>
+				</div>
+
+			</div>
+
+		</div>
+	</script>
+
+	<script src="src/index.js"></script>
+</body>
+
+</html>
